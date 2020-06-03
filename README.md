@@ -11,9 +11,6 @@ Uses random 1000 common english words to test typing accuracy and words per minu
 
 ### [Releases](https://github.com/elijahnikov/Typer/releases/tag/v1)
 
-
-![alt-text]()
-
 <p align="center">
-  <img width="460" height="300" src="https://i.imgur.com/eus8YYh.gif">
+  <img src="https://i.imgur.com/eus8YYh.gif">
 </p>

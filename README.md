@@ -5,7 +5,7 @@ Uses random 1000 common english words to test typing accuracy and words per minu
 
 ---
 
-#### To-Do
+### To-Do
 - [ ] Change colour of text to green or red in order to signify if input is correct or incorrect, respectively
 - [ ] Add option to change colour scheme of program
 - [ ] Allow user to change language of text

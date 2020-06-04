@@ -1,7 +1,7 @@
 # Typer
-A simple typing test. Created as a way to teach myself C#. 
+A simple typing test. Created as a way to teach myself C#.
 
-Uses random 1000 common english words to test typing accuracy and words per minute. 
+Uses random 1000 common english words to test typing accuracy and words per minute.
 
 ---
 
@@ -20,3 +20,5 @@ Uses random 1000 common english words to test typing accuracy and words per minu
 <p align="center">
   <img src="https://i.imgur.com/eus8YYh.gif">
 </p>
+
+## test

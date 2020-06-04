@@ -101,16 +101,6 @@
             </TextBox.Template>
         </TextBox>
 
-        <Rectangle 
-            x:Name="recordRect"
-            HorizontalAlignment="Left" 
-            Height="22" 
-            Margin="86,34,0,0" 
-            VerticalAlignment="Top" 
-            Width="169"
-            RadiusX="3"
-            RadiusY="3" Fill="#FFEAEAEA"/>
-
         <Label 
             x:Name="accLabel"
             Content="Acc:" 
@@ -144,6 +134,86 @@
             VerticalAlignment="Top"
             FontFamily="Bahnschrift" 
             FontSize="16"/>
+
+        <!--theme section-->
+        <Button x:Name="ThemeBtn"
+            Click="ThemeBtn_Click"
+            Content="Theme" 
+            HorizontalAlignment="Left" 
+            Margin="530,36,0,0" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift" 
+            BorderBrush="Black"
+            BorderThickness="2"
+            FontSize="14" 
+            Foreground="Black" 
+            Width="70"
+            Height="20">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFDCDCDC"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC5C5C5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="saveThemeBtn"
+            Click="saveThemeBtn_Click"
+            Content="Save" 
+            Visibility="Hidden"
+            HorizontalAlignment="Center" 
+            Margin="0,264,0,0" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift" 
+            BorderBrush="Black"
+            BorderThickness="2"
+            FontSize="14" 
+            Foreground="Black" 
+            Width="70"
+            Height="20">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFDCDCDC"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC5C5C5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
     </Grid>
 </Window>

@@ -18,5 +18,11 @@ Uses random 1000 common english words to test typing accuracy and words per minu
 ---
 
 <p align="center">
-  <img src="https://i.imgur.com/le8IA12.gif">
+  <img src="https://i.imgur.com/E7zvqT7.gif">
+</p>
+
+---
+
+<p align="center">
+  <img src="https://i.imgur.com/JMtHUsl.gif">
 </p>

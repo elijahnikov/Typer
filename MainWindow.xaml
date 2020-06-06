@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="Typer" Height="394" Width="700"
         PreviewKeyDown="Window_PreviewKeyDown">
-    <Grid Name="MainGrid" Background="AliceBlue">
+    <Grid Name="MainGrid" Background="#FAFAFA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="447*"/>
+            <ColumnDefinition Width="253*"/>
+        </Grid.ColumnDefinitions>
 
         <Border 
             x:Name="mainRect"
@@ -16,23 +20,23 @@
             CornerRadius="5,5,5,5" 
             BorderBrush="Black" 
             Background="#EAEAEA" 
-            Margin="67,62,67,62"/>
+            Margin="67,62,67,62" Grid.ColumnSpan="2"/>
 
         <RichTextBox x:Name="mainText" 
-                 HorizontalAlignment="Center"    
+                 HorizontalAlignment="Left"    
                  VerticalAlignment="Top" 
-                 Width="500" FontSize="18" Height="158" Margin="0,89,0,0" 
+                 Width="500" FontSize="18" Height="158" Margin="100,89,0,0" 
                  FontFamily="Bahnschrift" 
                  Background="{x:Null}" BorderBrush="{x:Null}" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionOpacity="0"
                  IsReadOnly="True"
                  FontStretch="Medium"
-                 IsHitTestVisible="False"/>
+                 IsHitTestVisible="False" Grid.ColumnSpan="2"/>
 
         <Button x:Name="RfrshBtn"
                 Click="RfrshBtn_Click"
                 Content="Refresh" 
                 HorizontalAlignment="Left" 
-                Margin="509,238,0,0" 
+                Margin="70,238,0,0" 
                 VerticalAlignment="Top" 
                 FontFamily="Bahnschrift" 
                 BorderBrush="Black"
@@ -40,7 +44,7 @@
                 FontSize="16" 
                 Foreground="Black" 
                 Width="80"
-                Height="22">
+                Height="22" Grid.Column="1">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#FFDCDCDC"/>
@@ -75,7 +79,7 @@
             Width="384" 
             Fill="#FFFAFAFA"
             RadiusX="6"
-            RadiusY="6"/>
+            RadiusY="6" Grid.ColumnSpan="2"/>
 
         <TextBox x:Name="entryBox"
                  Height="30" Margin="123,237,196,0" 
@@ -88,7 +92,7 @@
                  SelectionBrush="{x:Null}" 
                  SelectionTextBrush="{x:Null}" 
                  Background="{x:Null}"
-                 PreviewKeyDown="EntryBox_KeyDown">
+                 PreviewKeyDown="EntryBox_KeyDown" Grid.ColumnSpan="2">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -140,7 +144,47 @@
             Click="ThemeBtn_Click"
             Content="Theme" 
             HorizontalAlignment="Left" 
-            Margin="530,36,0,0" 
+            Margin="83,36,0,0" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift" 
+            BorderBrush="Black"
+            BorderThickness="2"
+            FontSize="14" 
+            Foreground="Black" 
+            Width="70"
+            Height="20" Grid.Column="1">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFDCDCDC"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC5C5C5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="saveThemeBtn"
+            Click="saveThemeBtn_Click"
+            Content="Save" 
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Margin="315,264,0,0" 
             VerticalAlignment="Top" 
             FontFamily="Bahnschrift" 
             BorderBrush="Black"
@@ -175,20 +219,19 @@
             </Button.Style>
         </Button>
 
-        <Button x:Name="saveThemeBtn"
-            Click="saveThemeBtn_Click"
-            Content="Save" 
+        <Button x:Name="OliviaThemeBtn"
+            Content="Olivia++" 
             Visibility="Hidden"
-            HorizontalAlignment="Center" 
-            Margin="0,264,0,0" 
+            Click="OliviaThemeBtn_Click"
+            HorizontalAlignment="Left" 
+            Margin="85,75,0,0" 
             VerticalAlignment="Top" 
             FontFamily="Bahnschrift" 
             BorderBrush="Black"
             BorderThickness="2"
             FontSize="14" 
-            Foreground="Black" 
-            Width="70"
-            Height="20">
+            Width="120"
+            Height="40">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
@@ -196,7 +239,8 @@
             </Button.Resources>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#FFDCDCDC"/>
+                    <Setter Property="Background" Value="#D6D4CD"/>
+                    <Setter Property="Foreground" Value="#DAAB99"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -214,6 +258,127 @@
                 </Style>
             </Button.Style>
         </Button>
+
+        <Button x:Name="DraculaThemeBtn"
+            Content="Dracula"
+            Visibility="Hidden"
+            Click="DraculaThemeBtn_Click"
+            HorizontalAlignment="Left" 
+            Margin="216,75,0,0" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift" 
+            BorderBrush="Black"
+            BorderThickness="6"
+            FontSize="14" 
+            Width="120"
+            Height="40">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#23222E"/>
+                    <Setter Property="Foreground" Value="#F2F2F5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC5C5C5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="ModernDolchThemeBtn"
+            Content="Modern Dolch" 
+            Visibility="Hidden"
+            Click="ModernDolchThemeBtn_Click"
+            HorizontalAlignment="Left" 
+            Margin="348,75,0,0" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift" 
+            BorderBrush="Black"
+            BorderThickness="2"
+            FontSize="14" 
+            Width="120"
+            Height="40" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#757678"/>
+                    <Setter Property="Foreground" Value="#70D4CC"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC5C5C5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="AshesThemeBtn"
+            Content="Ashes" 
+            Visibility="Hidden"
+            Click="AshesThemeBtn_Click"
+            HorizontalAlignment="Right" 
+            Margin="0,75,86,0" 
+            VerticalAlignment="Top" 
+            FontFamily="Bahnschrift" 
+            BorderBrush="Black"
+            BorderThickness="2"
+            FontSize="14"  
+            Width="120"
+            Height="40" Grid.Column="1">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF5F656B"/>
+                    <Setter Property="Foreground" Value="#D3DCE1"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC5C5C5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
 
     </Grid>
 </Window>
